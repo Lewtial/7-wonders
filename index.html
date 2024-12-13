@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<link rel="stylesheet" href="css/lightbox.css">
+	<script src="js/prototype.js"></script>
+	<script src="js/scriptaculous.js?load=effects"></script>
+	<script src="js/lightbox.js"></script>
+</head>
+<body>
+<center>
+	<h2>Las 7 Maravillas de Mundo Moderno</h2>
+
+	<h3>A través de los siglos las personas han destacado paisajes y construcciones dignas de admirar.
+		De hecho, existe un listado que data del siglo II antes de Cristo que reconoce siete maravillas del mundo.
+		Pero, con el cambio de siglo, una iniciativa dio a conocer los siete sitios más destacados. Entre ellos 3 destinos latinoamericanos.</h3>
+
+	<!--- CHICHÉN ITZÁ, MÉXICO -->
+
+	<div class="thumbnail" onclick="playSound('Chichen')">
+		<a href="maravillas/chichen itza.jpg" rel="lightbox" title="Chichen Itzá, México">
+			<img src="maravillas/chichen itza.jpg" width="500" height="400" alt=""></a>
+	</div>
+
+	<!--- PETRA, JORDANIA -->
+
+	<div class="thumbnail" onclick="playSound('Petra')">
+		<a href="maravillas/petra.jpg" rel="lightbox" title="Petra, Jordania">
+			<img src="maravillas/petra.jpg" width="500" height="400" alt=""></a>
+	</div>
+
+	<!--- EASTER EGG
+
+	<div class="thumbnail" onclick="playSound('GatoChino')">
+		<a href="mim/gato-chino-meme.png" rel="lightbox" title="我是邦戈 , 今天是我将接管世界的日子">
+			<img src="mim/gato-chino-meme.png" width="500" height="400" alt=""></a>
+	</div>
+
+	------ COLISEO ROMANO, ITALIA -->
+
+	<div class="thumbnail" onclick="playSound('Coliseo')">
+		<a href="maravillas/coliseo romano.jpg" rel="lightbox" title="Coliseo Romano, Italia">
+			<img src="maravillas/coliseo romano.jpg" width="500" height="400" alt=""></a>
+	</div>
+
+	<!--- CRISTO REDENTOR, BRASIL -->
+
+	<div class="thumbnail" onclick="playSound('Cristo')">
+		<a href="maravillas/cristo redentor.jpg" rel="lightbox" title="Cristo Redentor, Brasil">
+			<img src="maravillas/cristo redentor.jpg" width="500" height="400" alt=""></a>
+	</div>
+
+	<!--- TAJ MAHAL, INDIA -->
+
+	<div class="thumbnail" onclick="playSound('Taj')">
+		<a href="maravillas/taj mahal.jpg" rel="lightbox" title="Taj Mahal, India">
+			<img src="maravillas/taj mahal.jpg" width="500" height="400" alt=""></a>
+	</div>
+
+	<!--- MACHU PICCHU, PERÚ -->
+
+	<div class="thumbnail" onclick="playSound('Machu')">
+		<a href="maravillas/machu picchu.jpg" rel="lightbox" title="Machu Picchu, Perú">
+			<img src="maravillas/machu picchu.jpg" width="500" height="400" alt=""></a>
+	</div>
+
+	<!--- GRAN MURALLA CHINA -->
+
+	<div class="thumbnail" onclick="playSound('Muralla')">
+		<a href="maravillas/muralla china.jpg" rel="lightbox" title="Gran Muralla China">
+			<img src="maravillas/muralla china.jpg" width="500" height="400" alt=""></a>
+	</div>
+
+	<!--- ---------------------------------------- -->
+
+</center>
+	</body>
+</html>
+<audio id="Chichen" src="audio/V2/chichen itza 1.mp3"></audio>
+<audio id="Coliseo" src="audio/V2/coliseo 1.mp3"></audio>
+<audio id="Muralla" src="audio/V2/muralla china 1.mp3"></audio>
+<audio id="Petra" src="audio/V2/petra 1.mp3"></audio>
+<audio id="Taj" src="audio/V2/taj mahal 1.mp3"></audio>
+<audio id="Machu" src="audio/V2/machu picchu 1.mp3"></audio>
+<audio id="Cristo" src="audio/V2/cristo redentor 1.mp3"></audio>
+<script>
+    // Variable global para almacenar el audio actualmente en reproducción
+    var currentAudio = null;
+
+    function playSound(audioId) {
+        // Obtener el elemento de audio por su ID
+        var audioElement = document.getElementById(audioId);
+        
+        // Si hay un audio que se está reproduciendo y no es el que hemos clickeado, se va a pausar
+        if (currentAudio && currentAudio !== audioElement) {
+            currentAudio.pause(); // Pausamos el audio anterior
+        }
+        
+        // Si el audio esta en pausa, se va reproducir el siguiente
+        if (audioElement.paused) {
+            audioElement.play();
+            currentAudio = audioElement;
+        } else {
+            audioElement.pause();
+            currentAudio = null;
+        }
+    }
+</script>
+
+<!--
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⡀⣀⣀⣠⣤⣴⣶⣾⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⠿⠿⠿⠿⠿⠿⠇⢠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡿⠛⠉⠀⠀⠀⠀⠀⢠⠀⠂⢀⠀⠉⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⡀⠀⠀⠀⠀⠀⡄⠀⢸⠀⠰⠈⠄⢀⠀⠀⠙⢿⣿⣿⣿⣿⣿⡿⠿⠛⠉⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⡠⠈⠁⣀⠀⠈⠆⠀⠀⡞⡀⠄⠀⡁⠀⠸⠀⠐⠀⣄⠀⠀⠀⠛⡛⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢠⡜⠀⠐⠁⠸⠀⢀⡜⢀⡞⢄⡜⠀⠒⠃⠀⠈⠀⠂⢀⢸⣆⠀⢀⡔⠣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠍⣇⡀⠱⣦⣤⠾⠏⢠⣾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⢻⡄⢸⠠⡄⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢌⡐⠘⣷⣀⠀⠀⢀⣴⡿⠁⠀⠒⠛⠀⠀⠀⠀⠀⠀⠀⢤⣄⡀⢷⠀⣧⡀⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⡈⣾⠁⠀⠈⠙⡟⠛⠟⠃⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣷⣌⣁⡜⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢠⢱⡇⠀⢸⢀⠀⠃⠀⠀⡄⡇⣠⣤⣤⣄⡀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⡧⣉⠋⠀⠛⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡘⣾⡇⡀⢸⠈⠀⡎⠀⠀⢇⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠓⠒⡆⡈⠀⠀⠐⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣷⡷⣇⡄⢸⢃⠀⣇⠀⠇⢸⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⠃⢠⠁⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢸⣟⣇⣿⢸⢿⡆⢹⠄⠐⣈⡜⡀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⣐⠎⠇⡀⠀⡀⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢿⡿⣿⣧⣾⣷⡌⣷⣄⢡⠲⡀⠀⠀⠀⠀⠠⠤⠤⠀⠀⠀⢀⢤⠜⡙⡈⢠⡷⠀⡦⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠈⠻⢿⢿⡿⣿⣞⠿⣿⣧⡓⡌⠢⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡺⢮⣵⠗⠔⡰⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠉⠈⠛⠺⠿⠿⠛⠤⣶⣤⣄⣀⢀⠀⢀⣠⠔⠊⠉⠁⠉⠒⠯⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⣾⣿⣿⣿⣶⣶⣖⠲⠤⢐⣀⣉⡉⠙⠛⠿⡿⠋⠈⢢⣀⠤⠖⣶⣶⣤⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⡀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⡧⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣄⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀-->

@@ -1,0 +1,75 @@
+/**
+ * Creamoslos estilos iniciales para el 
+ * border animado con svg.
+ */
+.box {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #2c3e50;
+    -webkit-transition: background 0.4s 0.5s;
+    transition: background 0.4s 0.5s;
+    transition: box-shadow 0.4s 0.5s;
+    box-shadow: 0px 0px 0px none;   
+}
+.box:hover {
+    background: rgba(255,255,255,0);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    box-shadow: 0px 0px 10px #2c3e50;
+}
+.box svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.box svg line {
+    stroke-width: 5;
+    stroke: #757575;
+    fill: none;
+    -webkit-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+}
+
+/**
+ * Especificamos el tamaño de las lineas
+ * y tambien colocamos la separacion entre lineas
+ */
+.box svg line.top,
+.box svg line.bottom {
+    stroke-dasharray: 960 240; 
+}
+.box svg line.left,
+.box svg line.right {
+    stroke-dasharray: 540 400;
+}
+/**
+ * Agregamos las animaciones al hacer hover en .box
+ */
+.box:hover svg line.top {
+    -webkit-transform: translateX(-1200px);
+    transform: translateX(-1200px);
+    stroke-width: 10;
+    stroke: #9b0017;
+}
+.box:hover svg line.bottom {
+    -webkit-transform: translateX(1200px);
+    transform: translateX(1200px);
+    stroke-width: 10;
+    stroke: #9b0017;
+}
+.box:hover svg line.left {
+    -webkit-transform: translateY(940px);
+    transform: translateY(940px);
+    stroke-width: 10;
+    stroke: #9b0017;
+}
+.box:hover svg line.right {
+    -webkit-transform: translateY(-940px);
+    transform: translateY(-940px);
+    stroke-width: 10;
+    stroke: #9b0017;
+}
